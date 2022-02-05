@@ -28,8 +28,11 @@
 
 ### **Adding Data Persistence to MongoDB with Volumes**
     1. docker volume create data
-    2. docker run --name mongodb --rm -d --network goals-net -v data:/data/db mongo
-    3. docker run --name mongodb -v data:/data/db --rm -d --network goals-net -e MONGO_INITDB_ROOT_USERNAME=max -e MONGO_INITDB_ROOT_PASSWORD=secret mongo
-    4. docker run --name goals-backend --rm -d -p 80:80 --network goals-net goals-node
+    2. docker run --name mongodb -v data:/data/db --rm -d --network goals-net -e MONGO_INITDB_ROOT_USERNAME=max -e MONGO_INITDB_ROOT_PASSWORD=secret mongo
+    3. docker run --name goals-backend --rm -p 80:80 --network goals-net goals-node
+
+### **Volumes, Bind Mounts & Polishing for the NodeJS Container**
+    1. docker run --name goals-backend -v /Users/virus/Desktop/Backend/Docker/multi-container-apps/backend:/app -v logs:/app/logs -v /app/node_modules -d --rm -d -p 80:80 --network goals-net goals-node
+    2. docker logs goals-backend
 
 
