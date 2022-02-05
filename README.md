@@ -35,4 +35,8 @@
     1. docker run --name goals-backend -v /Users/virus/Desktop/Backend/Docker/multi-container-apps/backend:/app -v logs:/app/logs -v /app/node_modules -d --rm -d -p 80:80 --network goals-net goals-node
     2. docker logs goals-backend
 
+### **Live Source Code Updates for the React Container (with Bind Mounts)**
+    1. docker run -v /Users/virus/Desktop/Backend/Docker/multi-container-apps/frontend/src:/app/src --name goals-frontend --network goals-net  --rm -p 3000:3000 -it goals-react
+
+
 
