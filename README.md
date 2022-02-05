@@ -18,3 +18,11 @@
     1. cd frontend
     2. docker build -t goals-react .
     3. docker run --name goals-frontend --rm -p 3000:3000 -it goals-react
+
+### **Adding Docker Networks for Efficient Cross-Container Communication**
+    1. docker network create goals-net
+    2. docker network ls
+    4. docker run --name mongodb --rm -d --network goals-net mongo
+    5. docker run --name goals-backend --rm -d -p 80:80 --network goals-net goals-node  
+    6. docker run --name goals-frontend --rm -p 3000:3000 - -network goals-net -it goals-react
+
