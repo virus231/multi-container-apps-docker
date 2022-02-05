@@ -26,3 +26,10 @@
     5. docker run --name goals-backend --rm -d -p 80:80 --network goals-net goals-node  
     6. docker run --name goals-frontend --rm -p 3000:3000 - -network goals-net -it goals-react
 
+### **Adding Data Persistence to MongoDB with Volumes**
+    1. docker volume create data
+    2. docker run --name mongodb --rm -d --network goals-net -v data:/data/db mongo
+    3. docker run --name mongodb -v data:/data/db --rm -d --network goals-net -e MONGO_INITDB_ROOT_USERNAME=max -e MONGO_INITDB_ROOT_PASSWORD=secret mongo
+    4. docker run --name goals-backend --rm -d -p 80:80 --network goals-net goals-node
+
+
