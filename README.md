@@ -5,7 +5,7 @@
     1. docker run --name mongodb --rm -d -p 27017:27017 mongo
     2. cd backend => node app.js => CONNECTED
 
-### **Dockerizing the Node App** [![Node.js](https://img.shields.io/badge/Node.js-20232A?style=for-the-badge&logo=nodejs&logoColor=green)] 
+### **Dockerizing the Node App** [![NodeJS](https://img.shields.io/badge/NodeJS-20232A?style=for-the-badge&logo=nodejs&logoColor=green)] 
     1. cd backend
     2. docker build -t goals-node .
     3. docker run -d -p 3000:3000 goals-node
@@ -13,3 +13,8 @@
     5. localhost => host.docker.internal
     6. docker build -t goals-node .
     7. docker run --name goals-backend --rm -d -p 80:80 goals-node
+
+### **Moving the React SPA into a Container** [![ReactJS](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=bright)] 
+    1. cd frontend
+    2. docker build -t goals-react .
+    3. docker run --name goals-frontend --rm -p 3000:3000 -it goals-react
